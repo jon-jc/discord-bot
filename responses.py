@@ -48,7 +48,7 @@ def get_response(user_id: int, user_input: str) -> str:
 
     # Help command
     if lowered == '!help':
-        return "📚 Help Guide:\n!start - Begin setting up a new book club.\n!bookid [id] - Specify the book ID.\n!invite [usernames] - Invite members to the club.\n!confirm - Finish setup.\n!cancel - Cancel setup."
+        return "📚 Help Guide:\n!start - Begin setting up a new book club.\n!bookid [id] - Specify the book ID or the name of the Book.\n!invite [usernames] - Invite members to the club by specifying their usernames.\n!confirm - Finish setup.\n!cancel - Cancel setup."
 
     # Default response if command is not recognized
     return "❓ I didn't recognize that command. Try !help for a list of valid commands."
