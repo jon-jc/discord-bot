@@ -17,7 +17,7 @@ def get_response(user_id: int, user_input: str) -> str:
     # Start or reset book club setup
     if lowered == '!start':
         user_state[user_id] = 'ASK_BOOK_ID'
-        return "📘 Let's start a new book club! First, what's the ID of the book you want to discuss? Please enter it like '!bookid 123'."
+        return "📘 Let's start a new book club! First, what's the name or the ID of the book you want to discuss? Please enter it like '!bookid 123' or '!bookid name'."
 
     # Asking for book ID
     if current_state == 'ASK_BOOK_ID' and lowered.startswith('!bookid'):
@@ -26,7 +26,7 @@ def get_response(user_id: int, user_input: str) -> str:
             user_state[user_id] = 'ASK_MEMBERS'
             return f"📚 Book ID {book_id} noted! Now, who would you like to invite? Enter usernames separated by commas like '!invite user1, user2'."
         else:
-            return "🔍 Please specify a valid book ID. For example, '!bookid 123'."
+            return "🔍 Please specify a valid book ID. For example, '!bookid 123' or '!bookid book'."
 
     # Asking for members to invite
     if current_state == 'ASK_MEMBERS' and lowered.startswith('!invite'):
